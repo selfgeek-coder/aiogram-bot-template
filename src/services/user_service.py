@@ -1,0 +1,24 @@
+from sqlalchemy.orm import Session
+from src.repositories.user_repository import UserRepository
+
+
+class UserService:
+
+    @staticmethod
+    def get_or_create_user(
+        db: Session,
+        telegram_id: int,
+        username: str | None,
+        first_name: str | None,
+    ):
+        user = UserRepository.get_by_telegram_id(db, telegram_id)
+
+        if user:
+            return user
+
+        return UserRepository.create(
+            db=db,
+            telegram_id=telegram_id,
+            username=username,
+            first_name=first_name,
+        )

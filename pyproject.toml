@@ -1,0 +1,11 @@
+[project]
+name = "aiogram-bot-template"
+version = "0.1.0"
+description = "Шаблон для создания Telegram ботов с использованием слоистой архитектуры (aiogram 3, sqlalchemy)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiogram>=3.25.0",
+    "dotenv>=0.9.9",
+    "sqlalchemy>=2.0.46",
+]
