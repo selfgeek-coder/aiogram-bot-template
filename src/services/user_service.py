@@ -10,6 +10,7 @@ class UserService:
         telegram_id: int,
         username: str | None,
         first_name: str | None,
+        last_name: str | None
     ):
         user = UserRepository.get_by_telegram_id(db, telegram_id)
 
@@ -21,4 +22,5 @@ class UserService:
             telegram_id=telegram_id,
             username=username,
             first_name=first_name,
+            last_name=last_name,
         )

@@ -6,6 +6,7 @@ from config import config
 from src.db.database import init_db
 from src.bot.handlers import all_routers
 
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(name)s | %(levelname)s | %(message)s",
@@ -13,13 +14,13 @@ logging.basicConfig(
 
 
 async def main():
+    init_db()
+    
     bot = Bot(token=config.bot_token)
     dp = Dispatcher()
 
     for router in all_routers:
         dp.include_router(router)
-
-    init_db()
 
     await dp.start_polling(bot)
 
