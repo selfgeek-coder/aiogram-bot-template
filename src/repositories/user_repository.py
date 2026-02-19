@@ -14,13 +14,15 @@ class UserRepository:
         telegram_id: int,
         username: str | None,
         first_name: str | None,
-        last_name: str | None
+        last_name: str | None,
+        language: str | None
     ) -> User:
         user = User(
             telegram_id=telegram_id,
             username=username,
             first_name=first_name,
-            last_name=last_name
+            last_name=last_name,
+            language=language
         )
         db.add(user)
         db.commit()
