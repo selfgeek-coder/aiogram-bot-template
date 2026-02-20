@@ -23,6 +23,6 @@ async def start_handler(message: Message):
         
 
     await message.answer(
-        f"Привет, {message.from_user.first_name}!\n"
+        f"Привет, <b>{message.from_user.first_name}</b>!\n"
     )
     
